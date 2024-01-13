@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     
     <style>
+        :root {
+        --primary: #222222;
+        --secondary: #623aad;
+        --secondary2: #4e2d8d;
+        }
+
         body {
             background-color: #1a1a1a;
             color: #ffffff;
@@ -24,7 +30,7 @@
         }
 
         header {
-            background: linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.9)), url('your-background-image.jpg') center/cover;
+            background: linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.9));
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -32,6 +38,7 @@
             color: #ffffff;
             margin: 0;
             padding: 20px 0;
+            text-shadow: 0 0 1px #ffffff;
             border-bottom: 1px solid #666;
         }
 
@@ -53,15 +60,26 @@
             justify-content: center;
             
         }
+        nav.fixed-top {
+            background-color: var(--primary);
+        }
         .navbar-expand-lg .navbar-collapse{
             justify-content: center;
         }
         nav a {
-            color: #ffffff;
+            color: #d7d6d6;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
             transition: color 0.3s ease-in-out;
+        }
+
+        nav a.nav-link.active, nav a:hover {
+            color: var(--secondary)
+        }
+
+        .row h2 {
+            text-shadow: 0 0 7px #eee;
         }
         
 
@@ -72,8 +90,8 @@
         }
 
         .card {
-            background-color: #2e2d2d;
-            color: #ffffff;
+            background-color: var(--primary);
+            color: #eee;
             margin-bottom: 40px;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -100,12 +118,28 @@
         }
 
         .card-header {
-            background-color: #aa9978;
-            color: #ffffff;
+            font-size: 1.3rem;
+            background-color: var(--secondary2);
+            font-weight: bold;
+            color: #eee;
             border-bottom: 1px solid #333333;
             border-radius: 20px 20px 0 0;
             position: relative;
             z-index: 2;
+            display: flex;
+            justify-content: start;
+            align-items: end;
+            
+        }
+
+        .card-header svg {
+            fill: #eee;
+            width: 30px;
+            height: 30px;
+        }
+
+        .card-header i, .card-header svg {
+            margin-right: 15px;
         }
 
         .navbar.fixed-top {
@@ -119,10 +153,10 @@
         }
 
         footer {
-            background-color: #333333;
+            background-color: var(--primary);
             padding: 20px 0;
             text-align: center;
-            color: #ffffff;
+            color: #eee;
             position: relative;
             z-index: 2;
         }
@@ -161,9 +195,15 @@
             bottom: 20px;
             right: 20px;
             cursor: pointer;
-            background-color: #aa9978;
-            border-color: #aa9978;
+            color: #eee;
+            background-color: var(--secondary2);
+            border-color: var(--secondary2);
             z-index: 3;
+            opacity: 75%;
+        }
+
+        #scroll-to-top:hover {
+            opacity: 100%;
         }
         
         #scroll-to-top i {
@@ -181,12 +221,12 @@
     <header>
         <div class="container text-center">
             <h1>Alireza Seydi</h1>
-            <p class="lead">Computer Engineer | AI Enthusiast | Entrepreneur</p>
+            <p class="lead">Computer Engineer and AI Enthusiast</p>
         </div>
     </header>
     
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top justify-content: center;">
+    <nav class="navbar navbar-expand-lg fixed-top justify-content: center;">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -227,11 +267,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header  text-white">
-                            <i class="fas fa-graduation-cap icon"></i> Bachelor's Degree - Azarbaijan Shahid Madani
-                            University
+                        <div class="card-header">
+                            <i class="fas fa-graduation-cap icon"></i> <span>Bachelor's Degree </span>
                         </div>
                         <div class="card-body">
+                            <p class="card-text">Azarbaijan Shahid Madani University</p>
                             <p class="card-text">Computer Engineering</p>
                             <p class="card-text">GPA: 16.16/20</p>
                             <p class="card-text">In Top 5% among national exam takers</p>
@@ -243,8 +283,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fas fa-graduation-cap icon"></i> Governmental Leading High School
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M288 0H400c8.8 0 16 7.2 16 16V80c0 8.8-7.2 16-16 16H320.7l89.6 64H512c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H336V400c0-26.5-21.5-48-48-48s-48 21.5-48 48V512H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64H165.7L256 95.5V32c0-17.7 14.3-32 32-32zm48 240a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM80 224c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H80zm368 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H464c-8.8 0-16 7.2-16 16zM80 352c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H80zm384 0c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H464z"/></svg>
+                            <span>Governmental Leading High School</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Studied at the Governmental Leading High School, known as 'Nomone Dolati' in Iran.</p>
@@ -267,8 +308,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header  text-white">
-                            <i class="fas fa-code icon"></i> Programming Languages
+                        <div class="card-header">
+                            <i class="fas fa-code icon"></i> <span>Programming Languages</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Python, C++, JAVA </p>
@@ -279,8 +320,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fas fa-cogs icon"></i> DevOps Systems
+                        <div class="card-header">
+                            <i class="fas fa-layer-group icon"></i> <span>DevOps Systems</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Worked on DevOps systems, configuring and managing various servers for different purposes, such as web servers, database servers, and internet-passing servers.</p>
@@ -302,8 +343,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header  text-white">
-                            <i class="fas fa-briefcase icon"></i> Technical Engineer - Packaging Company
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+                            <span>Technical Engineer - Packaging Company</span>
+
                         </div>
                         <div class="card-body">
                             <p class="card-text">Worked on speeding up production, maintaining machinery, and
@@ -315,8 +358,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fas fa-cogs icon"></i> Automotive Electronics and ECUs
+                        <div class="card-header">
+                            <i class="fas fa-microchip icon"></i> <span>Automotive Electronics and ECUs</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Completed a course on Car's electronics and ECUs, gaining theoretical and practical experience in the field. Received a certificate from Iran Technical & Vocational Training Organization.</p>
@@ -325,23 +368,13 @@
                 </div>
                 <!-- Add more experience cards as needed -->
             </div>
+            
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fas fa-briefcase icon"></i> Internship - Cybersecurity Team
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Interned in a cybersecurity team, gaining experience in active and passive configurations. Used Linux-based systems, including Kali Linux and Ubuntu.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fas fa-users icon"></i> Presentation 
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M192 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-8 384V352h16V480c0 17.7 14.3 32 32 32s32-14.3 32-32V192h56 64 16c17.7 0 32-14.3 32-32s-14.3-32-32-32H384V64H576V256H384V224H320v48c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H368c-26.5 0-48 21.5-48 48v80H243.1 177.1c-33.7 0-64.9 17.7-82.3 46.6l-58.3 97c-9.1 15.1-4.2 34.8 10.9 43.9s34.8 4.2 43.9-10.9L120 256.9V480c0 17.7 14.3 32 32 32s32-14.3 32-32z"/></svg>
+                            <span>Presentation</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Delivered numerous presentations during university, demonstrating research abilities.</p>
@@ -363,8 +396,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header  text-white">
-                            <i class="fas fa-laptop-code icon"></i> AI with Python
+                        <div class="card-header">
+                            <i class="fas fa-laptop-code icon"></i> <span>AI with Python</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Research conducted on AI with Python.</p>
@@ -375,8 +408,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fas fa-laptop-code icon"></i> Full Market App with Java
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="25" width="30" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M36.8 192H603.2c20.3 0 36.8-16.5 36.8-36.8c0-7.3-2.2-14.4-6.2-20.4L558.2 21.4C549.3 8 534.4 0 518.3 0H121.7c-16 0-31 8-39.9 21.4L6.2 134.7c-4 6.1-6.2 13.2-6.2 20.4C0 175.5 16.5 192 36.8 192zM64 224V384v80c0 26.5 21.5 48 48 48H336c26.5 0 48-21.5 48-48V384 224H320V384H128V224H64zm448 0V480c0 17.7 14.3 32 32 32s32-14.3 32-32V224H512z"/></svg> 
+                            <span>Full Market App with Java</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Developed a full-market application using Java with a MySQL database.</p>
@@ -385,8 +419,8 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fab fa-python icon"></i> Telegram Bots with Python
+                        <div class="card-header">
+                            <i class="fas fa-robot icon"></i> <span>Telegram Bots with Python</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Created Telegram bots with Python, implementing functionalities like login and forwarding messages automatically.</p>
@@ -395,8 +429,8 @@
                 </div>
                     <div class="col-lg-12">
                         <div class="card" data-aos="fade-up">
-                            <div class="card-header text-white">
-                                <i class="fab fa-python icon"></i> AI Research Project - BTC Prediction
+                            <div class="card-header">
+                                <i class="fab fa-bitcoin icon"></i><span>AI Research Project - BTC Prediction</span>
                             </div>
                             <div class="card-body">
                                 <p class="card-text">Conducted research on Neural Networks and LSTM layers, predicting unseen data in BTC. Received a perfect score for the final project in the bachelor's degree.</p>
@@ -416,8 +450,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fas fa-flask icon"></i> Research on Neural Networks and LSTM Layers
+                        <div class="card-header">
+                            <i class="fas fa-flask icon"></i> <span>Research on Neural Networks and LSTM Layers</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Conducted research for the final project of the bachelor's degree on Neural Networks and LSTM layers, achieving a perfect score. The research focused on predicting unseen data in BTC.</p>
@@ -426,8 +460,9 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
-                            <i class="fas fa-user"></i> Academic Paper Translation
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+                            <span>Academic Paper Translation</span>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Assisted professor by translating Persian research paper into English for successful journal publication.</p>
@@ -448,8 +483,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header  text-white">
-                            <i class="fas fa-envelope icon"></i> Email
+                        <div class="card-header">
+                            <i class="fas fa-envelope icon"></i> <span>Email</span>
                         </div>
                         <div class="card-body">
                             <a class="card-text" style="color: white;" href="mailto:alirezaseydi20@gmail.com">alirezaseydi20@gmail.com</a>
@@ -458,8 +493,8 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header  text-white">
-                            <i class="fab fa-github icon"></i> GitHub
+                        <div class="card-header">
+                            <i class="fab fa-github icon"></i> <span>GitHub</span>
                         </div>
                         <div class="card-body">
                             <a class="card-text color=gray" style="color: white;" href="https://github.com/CogniEpoch">CogniEpoch</a>
@@ -468,8 +503,8 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header  text-white">
-                            <i class="fab fa-linkedin icon"></i> Linkedin
+                        <div class="card-header ">
+                            <i class="fab fa-linkedin icon"></i> <span>Linkedin</span>
                         </div>
                         <div class="card-body">
                             <a class="card-text color=gray" style="color: white;" href="https://github.com/CogniEpoch">--</a>
@@ -490,7 +525,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
+                        <div class="card-header">
                             <i class="fas fa-guitar icon"></i> Playing Guitar
                         </div>
                         <div class="card-body">
@@ -503,7 +538,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
+                        <div class="card-header">
                             <i class="fab fa-bitcoin icon"></i> Cryptocurrency Trading
                         </div>
                         <div class="card-body">
@@ -516,7 +551,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card" data-aos="fade-up">
-                        <div class="card-header text-white">
+                        <div class="card-header">
                             <i class="fas fa-bullseye icon"></i> Career Aspirations
                         </div>
                         <div class="card-body">
@@ -539,7 +574,7 @@
         <i class="fas fa-chevron-up"></i>
     </div>
 
-    <footer class=" text-white text-center py-3">
+    <footer class="text-center py-3">
         <div class="container">
             <p>&copy; 2024 Alireza Seydi. All Rights Reserved.</p>
         </div>
@@ -561,7 +596,7 @@
         particlesJS('particles-js', {
             particles: {
                 number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#ffffff' },
+                color: { value: '#eee' },
                 shape: { type: 'circle', stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 }, image: { src: 'img/github.svg', width: 100, height: 100 } },
                 opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
                 size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
