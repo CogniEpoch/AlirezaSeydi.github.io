@@ -19,6 +19,8 @@
         --secondary2: #4e2d8d;
         }
 
+       
+
         body {
             background-color: #1a1a1a;
             color: #ffffff;
@@ -41,7 +43,12 @@
             text-shadow: 0 0 1px #ffffff;
             border-bottom: 1px solid #666;
         }
-
+        header h1{
+            font-size: xx-large;
+        }
+        .lead{
+            font-size: larger;
+        }
         h1,
         h2,
         h3 {
@@ -64,7 +71,7 @@
             background-color: var(--primary);
         }
         .navbar-expand-lg .navbar-collapse{
-            justify-content: center;
+            <!-- justify-content: center; -->
         }
         nav a {
             color: #d7d6d6;
@@ -73,16 +80,16 @@
             font-weight: bold;
             transition: color 0.3s ease-in-out;
         }
-
+        
         nav a.nav-link.active, nav a:hover {
             color: var(--secondary)
         }
-
+        
         .row h2 {
             text-shadow: 0 0 7px #eee;
         }
         
-
+        
         section {
             padding: 100px 0;
             position: relative;
@@ -100,7 +107,7 @@
             position: relative;
             z-index: 1;
         }
-
+        
         .card:before {
             content: '';
             position: absolute;
@@ -111,12 +118,12 @@
             background-size: 400% 400%;
             z-index: -1;
         }
-
+        
         .card:hover {
             transform: scale(1.5);
-            box-shadow: #fff;
+            box-shadow: #fff !important;
         }
-
+        
         .card-header {
             font-size: 1.3rem;
             background-color: var(--secondary2);
@@ -128,22 +135,21 @@
             z-index: 2;
             display: flex;
             justify-content: start;
-            align-items: end;
+            align-items: center;
             
         }
-
+        
         .card-header svg {
             fill: #eee;
             width: 30px;
             height: 30px;
         }
-
+        
         .card-header i, .card-header svg {
             margin-right: 15px;
         }
-
+        
         .navbar.fixed-top {
-            /* Add a box shadow to create a sense of separation */
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             
         }
@@ -151,7 +157,7 @@
             /* Add margin-top to create space for the fixed navbar */
             margin-top: 70px;
         }
-
+        
         footer {
             background-color: var(--primary);
             padding: 20px 0;
@@ -160,7 +166,7 @@
             position: relative;
             z-index: 2;
         }
-
+        
         /* Add space-like background animation */
         #particles-js {
             position: fixed;
@@ -171,25 +177,25 @@
             z-index: -1;
         }
         
-
+        
         /* Additional Styling */
         
-
+        
         .icon {
             font-size: 2rem;
             margin-right: 5px;
         }
-
+        
         
         .animated-icons i:hover {
             transform: scale(1.2);
         }
-
+        
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
-
+        
         #scroll-to-top {
             position: fixed;
             bottom: 20px;
@@ -199,9 +205,10 @@
             background-color: var(--secondary2);
             border-color: var(--secondary2);
             z-index: 3;
-            opacity: 75%;
+            opacity: 60%;
+            transition: opacity 0.5s ease-in-out;
         }
-
+        
         #scroll-to-top:hover {
             opacity: 100%;
         }
@@ -210,6 +217,47 @@
             font-size: 24px;
         }
         
+        @media (min-width:990px) and (max-width:1200px){
+            header{
+                top: 20px;
+            }
+        }
+        @media ( max-width:395px ){
+            .lead{
+                font-size: medium;
+            }
+            .navbar.fixed-top {
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+                
+            }
+        }
+        @media (max-width : 768px){
+            
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+    
+            ul li {
+                width: 100px;
+            }
+
+            
+        }
+
+        @media (max-width:990px){
+            
+            header{
+                bottom: 12px;
+            }
+        }
+        
+        .navbar-nav{
+            display: flex;
+            flex-direction: row;
+            overflow: auto;
+        }
+
     </style>
 </head>
 
@@ -226,11 +274,11 @@
     </header>
     
 
-    <nav class="navbar navbar-expand-lg fixed-top justify-content: center;">
+    <nav class="navbar navbar-expand-lg fixed-top justify-content: center">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon" style="color: #d7d6d6;"><i class="fas fa-bars icon"></i></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ">
@@ -250,10 +298,10 @@
                         <a class="nav-link" href="#research"><i class="fas fa-microscope icon"></i> Research</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact"><i class="fas fa-envelope icon"></i> Contact</a>
+                        <a class="nav-link" href="#hobbies"><i class="fas fa-icons icon"></i> Hobbies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#hobbies"><i class="fas fa-icons icon"></i> Hobbies</a>
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope icon"></i> Contact</a>
                     </li>
                 </ul>
             </div>
@@ -476,48 +524,7 @@
             </div>
         </div>
     </section>
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Contact</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card" data-aos="fade-up">
-                        <div class="card-header">
-                            <i class="fas fa-envelope icon"></i> <span>Email</span>
-                        </div>
-                        <div class="card-body">
-                            <a class="card-text" style="color: white;" href="mailto:alirezaseydi20@gmail.com">alirezaseydi20@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="card" data-aos="fade-up">
-                        <div class="card-header">
-                            <i class="fab fa-github icon"></i> <span>GitHub</span>
-                        </div>
-                        <div class="card-body">
-                            <a class="card-text color=gray" style="color: white;" href="https://github.com/CogniEpoch">CogniEpoch</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="card" data-aos="fade-up">
-                        <div class="card-header ">
-                            <i class="fab fa-linkedin icon"></i> <span>Linkedin</span>
-                        </div>
-                        <div class="card-body">
-                            <a class="card-text color=gray" style="color: white;" href="https://www.linkedin.com/in/alireza-seydi/">Alireza Seydi</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <section id="hobbies">
         <div class="container">
             <div class="row">
@@ -563,6 +570,47 @@
                     </div>
                 </div>
                 <!-- Add more goal cards as needed -->
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Contact</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card" data-aos="fade-up">
+                        <div class="card-header">
+                            <i class="fas fa-envelope icon"></i> <span>Email</span>
+                        </div>
+                        <div class="card-body">
+                            <a class="card-text" style="color: white;" href="mailto:alirezaseydi20@gmail.com">alirezaseydi20@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card" data-aos="fade-up">
+                        <div class="card-header">
+                            <i class="fab fa-github icon"></i> <span>GitHub</span>
+                        </div>
+                        <div class="card-body">
+                            <a class="card-text color=gray" style="color: white;" href="https://github.com/CogniEpoch">CogniEpoch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card" data-aos="fade-up">
+                        <div class="card-header ">
+                            <i class="fab fa-linkedin icon"></i> <span>Linkedin</span>
+                        </div>
+                        <div class="card-body">
+                            <a class="card-text color=gray" style="color: white;" href="https://www.linkedin.com/in/alireza-seydi/">Alireza Seydi</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -619,7 +667,7 @@
             var scrollBtn = document.getElementById("scroll-to-top");
     
             window.addEventListener("scroll", function () {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
                     scrollBtn.style.display = "block";
                 } else {
                     scrollBtn.style.display = "none";
@@ -633,6 +681,15 @@
             });
         });
     </script>
+    <script>document.addEventListener('click', function(event) {
+        const navbar = document.querySelector('.navbar');
+        const toggler = navbar.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+      
+        if (!navbar.contains(event.target) && !toggler.contains(event.target)) {
+          navbarCollapse.classList.remove('show');
+        }
+      });</script>
 
 </body>
 
